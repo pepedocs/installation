@@ -134,6 +134,11 @@
       name: middleware_monitoring_config
       tasks_from: create_alerts
 
+  - name: Update backup
+    include_role:
+      name: backup
+      tasks_from: upgrade
+
   - name: Expose vars
     include_vars: "../roles/enmasse/defaults/main.yml"
 
